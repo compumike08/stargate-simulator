@@ -107,7 +107,71 @@
   <ItemGroup>
     <Folder Include=".git\objects\info\" />
     <Folder Include=".git\refs\tags\" />
-    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\glyphs\1-earth-origin.svg" />
+    <Content Include="images\glyphs\10-corona-australis.svg" />
+    <Content Include="images\glyphs\11-scutum.svg" />
+    <Content Include="images\glyphs\12-sagittarius.svg" />
+    <Content Include="images\glyphs\13-aquila.svg" />
+    <Content Include="images\glyphs\14-microscopium.svg" />
+    <Content Include="images\glyphs\15-capricornus.svg" />
+    <Content Include="images\glyphs\16-piscis-austrinus.svg" />
+    <Content Include="images\glyphs\17-equuleus.svg" />
+    <Content Include="images\glyphs\18-aquarius.svg" />
+    <Content Include="images\glyphs\19-pegasus.svg" />
+    <Content Include="images\glyphs\2-crater.svg" />
+    <Content Include="images\glyphs\20-sculptor.svg" />
+    <Content Include="images\glyphs\21-pisces.svg" />
+    <Content Include="images\glyphs\22-andromeda.svg" />
+    <Content Include="images\glyphs\23-triangulum.svg" />
+    <Content Include="images\glyphs\24-aries.svg" />
+    <Content Include="images\glyphs\25-perseus.svg" />
+    <Content Include="images\glyphs\26-cetus.svg" />
+    <Content Include="images\glyphs\27-taurus.svg" />
+    <Content Include="images\glyphs\28-auriga.svg" />
+    <Content Include="images\glyphs\29-eridanus.svg" />
+    <Content Include="images\glyphs\3-virgo.svg" />
+    <Content Include="images\glyphs\30-orion.svg" />
+    <Content Include="images\glyphs\31-canis-minor.svg" />
+    <Content Include="images\glyphs\32-monoceros.svg" />
+    <Content Include="images\glyphs\33-gemini.svg" />
+    <Content Include="images\glyphs\34-hydra.svg" />
+    <Content Include="images\glyphs\35-lynx.svg" />
+    <Content Include="images\glyphs\36-cancer.svg" />
+    <Content Include="images\glyphs\37-sextans.svg" />
+    <Content Include="images\glyphs\38-leo-minor.svg" />
+    <Content Include="images\glyphs\39-leo.svg" />
+    <Content Include="images\glyphs\4-bootes.svg" />
+    <Content Include="images\glyphs\5-centaurus.svg" />
+    <Content Include="images\glyphs\6-libra.svg" />
+    <Content Include="images\glyphs\7-serpens-caput.svg" />
+    <Content Include="images\glyphs\8-norma.svg" />
+    <Content Include="images\glyphs\9-scorpius.svg" />
+    <Content Include="images\Milky_Way_stargate.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.Targets" />
   <ProjectExtensions>
