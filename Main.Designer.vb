@@ -156,6 +156,7 @@ Partial Class Main
         '
         'cmdDial
         '
+        Me.cmdDial.Enabled = False
         Me.cmdDial.Location = New System.Drawing.Point(1137, 705)
         Me.cmdDial.Name = "cmdDial"
         Me.cmdDial.Size = New System.Drawing.Size(165, 62)

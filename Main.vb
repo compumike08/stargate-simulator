@@ -45,7 +45,7 @@
     Dim rotatingToGlyph As Integer = 0
     Dim currentlyEncodingChevron As Integer = 0
 
-    Dim dialGlyphs(7) As Integer
+    Dim dialGlyphs() As Integer = {-1, -1, -1, -1, -1, -1, -1}
 
     Private Sub tmrDialClockwise_Tick(sender As Object, e As EventArgs) Handles tmrDialClockwise.Tick
         If currentGlyph = rotatingToGlyph Then
@@ -140,65 +140,112 @@
     End Sub
 
     Private Sub encoded1_Click(sender As Object, e As EventArgs) Handles encoded1.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 1")
-        dialGlyphs(0) = dial - 1
-        encoded1.BackgroundImage = glyphArray(dialGlyphs(0))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 1")
+            dialGlyphs(0) = dial - 1
+            encoded1.BackgroundImage = glyphArray(dialGlyphs(0))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(0) = -1
+        End Try
     End Sub
 
     Private Sub encoded2_Click(sender As Object, e As EventArgs) Handles encoded2.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 2")
-        dialGlyphs(1) = dial - 1
-        encoded2.BackgroundImage = glyphArray(dialGlyphs(1))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 2")
+            dialGlyphs(1) = dial - 1
+            encoded2.BackgroundImage = glyphArray(dialGlyphs(1))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(1) = -1
+        End Try
     End Sub
 
     Private Sub encoded3_Click(sender As Object, e As EventArgs) Handles encoded3.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 3")
-        dialGlyphs(2) = dial - 1
-        encoded3.BackgroundImage = glyphArray(dialGlyphs(2))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 3")
+            dialGlyphs(2) = dial - 1
+            encoded3.BackgroundImage = glyphArray(dialGlyphs(2))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(2) = -1
+        End Try
     End Sub
 
     Private Sub encoded4_Click(sender As Object, e As EventArgs) Handles encoded4.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 4")
-        dialGlyphs(3) = dial - 1
-        encoded4.BackgroundImage = glyphArray(dialGlyphs(3))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 4")
+            dialGlyphs(3) = dial - 1
+            encoded4.BackgroundImage = glyphArray(dialGlyphs(3))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(3) = -1
+        End Try
     End Sub
 
     Private Sub encoded5_Click(sender As Object, e As EventArgs) Handles encoded5.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 5")
-        dialGlyphs(4) = dial - 1
-        encoded5.BackgroundImage = glyphArray(dialGlyphs(4))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 5")
+            dialGlyphs(4) = dial - 1
+            encoded5.BackgroundImage = glyphArray(dialGlyphs(4))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(4) = -1
+        End Try
     End Sub
 
     Private Sub encoded6_Click(sender As Object, e As EventArgs) Handles encoded6.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 6")
-        dialGlyphs(5) = dial - 1
-        encoded6.BackgroundImage = glyphArray(dialGlyphs(5))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 6")
+            dialGlyphs(5) = dial - 1
+            encoded6.BackgroundImage = glyphArray(dialGlyphs(5))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(5) = -1
+        End Try
     End Sub
 
     Private Sub encoded7_Click(sender As Object, e As EventArgs) Handles encoded7.Click
-        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 7")
-        dialGlyphs(6) = dial - 1
-        encoded7.BackgroundImage = glyphArray(dialGlyphs(6))
+        Try
+            Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 7")
+
+            dialGlyphs(6) = dial - 1
+            encoded7.BackgroundImage = glyphArray(dialGlyphs(6))
+
+            checkInputGlyphs()
+        Catch ex As Exception
+            dialGlyphs(6) = -1
+        End Try
     End Sub
 
     Private Sub cmdDial_Click(sender As Object, e As EventArgs) Handles cmdDial.Click
-        clearEncodedGlyphs()
+        If dialGlyphs(0) = -1 Or dialGlyphs(1) = -1 Or dialGlyphs(2) = -1 Or dialGlyphs(3) = -1 Or dialGlyphs(4) = -1 Or dialGlyphs(5) = -1 Or dialGlyphs(6) = -1 Then
+            MessageBox.Show("You cannot dial the gate without entering a symbol for each of the 7 chevrons.")
+        Else
+            clearEncodedGlyphs()
 
-        encoded1.BackColor = Color.White
-        encoded2.BackColor = Color.White
-        encoded3.BackColor = Color.White
-        encoded4.BackColor = Color.White
-        encoded5.BackColor = Color.White
-        encoded6.BackColor = Color.White
-        encoded7.BackColor = Color.White
+            encoded1.BackColor = Color.White
+            encoded2.BackColor = Color.White
+            encoded3.BackColor = Color.White
+            encoded4.BackColor = Color.White
+            encoded5.BackColor = Color.White
+            encoded6.BackColor = Color.White
+            encoded7.BackColor = Color.White
 
-        currentlyEncodingChevron = 0
-        rotatingToGlyph = dialGlyphs(0)
+            currentlyEncodingChevron = 0
+            rotatingToGlyph = dialGlyphs(0)
 
-        tmrDialCounterclockwise.Enabled = True
+            tmrDialCounterclockwise.Enabled = True
 
-        cmdDial.Enabled = False
-        cmdAbort.Enabled = True
+            cmdDial.Enabled = False
+            cmdAbort.Enabled = True
+        End If
     End Sub
 
     Private Sub addressLocked()
@@ -217,18 +264,17 @@
         tmrDialClockwise.Enabled = False
         tmrDialCounterclockwise.Enabled = False
         currentlyEncodingChevron = 0
-        dialGlyphs(0) = Nothing
-        dialGlyphs(1) = Nothing
-        dialGlyphs(2) = Nothing
-        dialGlyphs(3) = Nothing
-        dialGlyphs(4) = Nothing
-        dialGlyphs(5) = Nothing
-        dialGlyphs(6) = Nothing
+        dialGlyphs(0) = -1
+        dialGlyphs(1) = -1
+        dialGlyphs(2) = -1
+        dialGlyphs(3) = -1
+        dialGlyphs(4) = -1
+        dialGlyphs(5) = -1
+        dialGlyphs(6) = -1
         clearEncodedGlyphs()
 
         txtLocked.Visible = False
         cmdAbort.Enabled = False
-        cmdDial.Enabled = True
     End Sub
 
     Private Sub clearEncodedGlyphs()
@@ -252,5 +298,13 @@
 
         encoded7.BackgroundImage = Nothing
         encoded7.BackColor = Color.LightGray
+    End Sub
+
+    Private Sub checkInputGlyphs()
+        If dialGlyphs(0) = -1 Or dialGlyphs(1) = -1 Or dialGlyphs(2) = -1 Or dialGlyphs(3) = -1 Or dialGlyphs(4) = -1 Or dialGlyphs(5) = -1 Or dialGlyphs(6) = -1 Then
+            cmdDial.Enabled = False
+        Else
+            cmdDial.Enabled = True
+        End If
     End Sub
 End Class
