@@ -5,8 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{DC6DE63D-0BED-472F-81D7-20742EF8AB71}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>Stargate_Simulator.Main</StartupObject>
     <RootNamespace>Stargate_Simulator</RootNamespace>
     <AssemblyName>WindowsApplication</AssemblyName>
     <FileAlignment>512</FileAlignment>

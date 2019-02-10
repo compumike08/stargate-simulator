@@ -22,8 +22,11 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gateBackground = New System.Windows.Forms.Panel()
         Me.glyphContainer = New System.Windows.Forms.Panel()
+        Me.tmrDialClockwise = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrDialCounterclockwise = New System.Windows.Forms.Timer(Me.components)
         Me.gateBackground.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,11 +43,20 @@ Partial Class Main
         '
         'glyphContainer
         '
+        Me.glyphContainer.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.MilkyWayGlyph01
         Me.glyphContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.glyphContainer.Location = New System.Drawing.Point(174, 174)
         Me.glyphContainer.Name = "glyphContainer"
         Me.glyphContainer.Size = New System.Drawing.Size(340, 340)
         Me.glyphContainer.TabIndex = 0
+        '
+        'tmrDialClockwise
+        '
+        Me.tmrDialClockwise.Interval = 500
+        '
+        'tmrDialCounterclockwise
+        '
+        Me.tmrDialCounterclockwise.Interval = 500
         '
         'Main
         '
@@ -61,4 +73,6 @@ Partial Class Main
 
     Friend WithEvents gateBackground As Panel
     Friend WithEvents glyphContainer As Panel
+    Friend WithEvents tmrDialClockwise As Timer
+    Friend WithEvents tmrDialCounterclockwise As Timer
 End Class
