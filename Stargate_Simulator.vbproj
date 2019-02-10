@@ -7,7 +7,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Stargate_Simulator.Main</StartupObject>
     <RootNamespace>Stargate_Simulator</RootNamespace>
-    <AssemblyName>WindowsApplication</AssemblyName>
+    <AssemblyName>Stargate_Simulator</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
