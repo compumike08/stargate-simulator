@@ -25,6 +25,7 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Me.gateBackground = New System.Windows.Forms.Panel()
         Me.glyphContainer = New System.Windows.Forms.Panel()
+        Me.txtLocked = New System.Windows.Forms.TextBox()
         Me.tmrDialClockwise = New System.Windows.Forms.Timer(Me.components)
         Me.tmrDialCounterclockwise = New System.Windows.Forms.Timer(Me.components)
         Me.encoded1 = New System.Windows.Forms.Panel()
@@ -35,7 +36,9 @@ Partial Class Main
         Me.encoded6 = New System.Windows.Forms.Panel()
         Me.encoded7 = New System.Windows.Forms.Panel()
         Me.cmdDial = New System.Windows.Forms.Button()
+        Me.cmdAbort = New System.Windows.Forms.Button()
         Me.gateBackground.SuspendLayout()
+        Me.glyphContainer.SuspendLayout()
         Me.SuspendLayout()
         '
         'gateBackground
@@ -53,10 +56,25 @@ Partial Class Main
         '
         Me.glyphContainer.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.MilkyWayGlyph01
         Me.glyphContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.glyphContainer.Controls.Add(Me.txtLocked)
         Me.glyphContainer.Location = New System.Drawing.Point(174, 174)
         Me.glyphContainer.Name = "glyphContainer"
         Me.glyphContainer.Size = New System.Drawing.Size(340, 340)
         Me.glyphContainer.TabIndex = 0
+        '
+        'txtLocked
+        '
+        Me.txtLocked.BackColor = System.Drawing.Color.Black
+        Me.txtLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLocked.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLocked.ForeColor = System.Drawing.Color.Red
+        Me.txtLocked.Location = New System.Drawing.Point(79, 144)
+        Me.txtLocked.Name = "txtLocked"
+        Me.txtLocked.Size = New System.Drawing.Size(182, 53)
+        Me.txtLocked.TabIndex = 0
+        Me.txtLocked.Text = "LOCKED"
+        Me.txtLocked.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtLocked.Visible = False
         '
         'tmrDialClockwise
         '
@@ -68,6 +86,7 @@ Partial Class Main
         '
         'encoded1
         '
+        Me.encoded1.BackColor = System.Drawing.Color.LightGray
         Me.encoded1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded1.Location = New System.Drawing.Point(1332, 36)
@@ -77,6 +96,7 @@ Partial Class Main
         '
         'encoded2
         '
+        Me.encoded2.BackColor = System.Drawing.Color.LightGray
         Me.encoded2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded2.Location = New System.Drawing.Point(1332, 157)
@@ -86,6 +106,7 @@ Partial Class Main
         '
         'encoded3
         '
+        Me.encoded3.BackColor = System.Drawing.Color.LightGray
         Me.encoded3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded3.Location = New System.Drawing.Point(1332, 278)
@@ -95,6 +116,7 @@ Partial Class Main
         '
         'encoded4
         '
+        Me.encoded4.BackColor = System.Drawing.Color.LightGray
         Me.encoded4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded4.Location = New System.Drawing.Point(1332, 399)
@@ -104,6 +126,7 @@ Partial Class Main
         '
         'encoded5
         '
+        Me.encoded5.BackColor = System.Drawing.Color.LightGray
         Me.encoded5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded5.Location = New System.Drawing.Point(1332, 520)
@@ -113,6 +136,7 @@ Partial Class Main
         '
         'encoded6
         '
+        Me.encoded6.BackColor = System.Drawing.Color.LightGray
         Me.encoded6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded6.Location = New System.Drawing.Point(1332, 641)
@@ -122,6 +146,7 @@ Partial Class Main
         '
         'encoded7
         '
+        Me.encoded7.BackColor = System.Drawing.Color.LightGray
         Me.encoded7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.encoded7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.encoded7.Location = New System.Drawing.Point(1332, 762)
@@ -131,18 +156,29 @@ Partial Class Main
         '
         'cmdDial
         '
-        Me.cmdDial.Location = New System.Drawing.Point(1141, 789)
+        Me.cmdDial.Location = New System.Drawing.Point(1137, 705)
         Me.cmdDial.Name = "cmdDial"
         Me.cmdDial.Size = New System.Drawing.Size(165, 62)
         Me.cmdDial.TabIndex = 4
         Me.cmdDial.Text = "DIAL"
         Me.cmdDial.UseVisualStyleBackColor = True
         '
+        'cmdAbort
+        '
+        Me.cmdAbort.Enabled = False
+        Me.cmdAbort.Location = New System.Drawing.Point(1137, 798)
+        Me.cmdAbort.Name = "cmdAbort"
+        Me.cmdAbort.Size = New System.Drawing.Size(165, 62)
+        Me.cmdAbort.TabIndex = 5
+        Me.cmdAbort.Text = "ABORT"
+        Me.cmdAbort.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1479, 887)
+        Me.Controls.Add(Me.cmdAbort)
         Me.Controls.Add(Me.cmdDial)
         Me.Controls.Add(Me.encoded7)
         Me.Controls.Add(Me.encoded6)
@@ -155,6 +191,8 @@ Partial Class Main
         Me.Name = "Main"
         Me.Text = "Main"
         Me.gateBackground.ResumeLayout(False)
+        Me.glyphContainer.ResumeLayout(False)
+        Me.glyphContainer.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -171,4 +209,6 @@ Partial Class Main
     Friend WithEvents encoded6 As Panel
     Friend WithEvents encoded7 As Panel
     Friend WithEvents cmdDial As Button
+    Friend WithEvents txtLocked As TextBox
+    Friend WithEvents cmdAbort As Button
 End Class

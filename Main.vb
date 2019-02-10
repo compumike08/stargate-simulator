@@ -48,23 +48,95 @@
     Dim dialGlyphs(7) As Integer
 
     Private Sub tmrDialClockwise_Tick(sender As Object, e As EventArgs) Handles tmrDialClockwise.Tick
-        If currentGlyph = 0 Then
-            currentGlyph = 38
-        Else
-            currentGlyph = currentGlyph - 1
-        End If
+        If currentGlyph = rotatingToGlyph Then
+            tmrDialClockwise.Enabled = False
 
-        glyphContainer.BackgroundImage = glyphArray(currentGlyph)
+            Select Case currentlyEncodingChevron
+                Case 0
+                    encoded1.BackgroundImage = glyphArray(currentGlyph)
+                    encoded1.BackColor = Color.LightBlue
+                Case 1
+                    encoded2.BackgroundImage = glyphArray(currentGlyph)
+                    encoded2.BackColor = Color.LightBlue
+                Case 2
+                    encoded3.BackgroundImage = glyphArray(currentGlyph)
+                    encoded3.BackColor = Color.LightBlue
+                Case 3
+                    encoded4.BackgroundImage = glyphArray(currentGlyph)
+                    encoded4.BackColor = Color.LightBlue
+                Case 4
+                    encoded5.BackgroundImage = glyphArray(currentGlyph)
+                    encoded5.BackColor = Color.LightBlue
+                Case 5
+                    encoded6.BackgroundImage = glyphArray(currentGlyph)
+                    encoded6.BackColor = Color.LightBlue
+                Case 6
+                    encoded7.BackgroundImage = glyphArray(currentGlyph)
+                    encoded7.BackColor = Color.LightBlue
+            End Select
+
+            If currentlyEncodingChevron = 6 Then
+                addressLocked()
+            Else
+                currentlyEncodingChevron = currentlyEncodingChevron + 1
+                rotatingToGlyph = dialGlyphs(currentlyEncodingChevron)
+                tmrDialCounterclockwise.Enabled = True
+            End If
+        Else
+            If currentGlyph = 0 Then
+                currentGlyph = 38
+            Else
+                currentGlyph = currentGlyph - 1
+            End If
+
+            glyphContainer.BackgroundImage = glyphArray(currentGlyph)
+        End If
     End Sub
 
     Private Sub tmrDialCounterclockwise_Tick(sender As Object, e As EventArgs) Handles tmrDialCounterclockwise.Tick
-        If currentGlyph = 38 Then
-            currentGlyph = 0
-        Else
-            currentGlyph = currentGlyph + 1
-        End If
+        If currentGlyph = rotatingToGlyph Then
+            tmrDialCounterclockwise.Enabled = False
 
-        glyphContainer.BackgroundImage = glyphArray(currentGlyph)
+            Select Case currentlyEncodingChevron
+                Case 0
+                    encoded1.BackgroundImage = glyphArray(currentGlyph)
+                    encoded1.BackColor = Color.LightBlue
+                Case 1
+                    encoded2.BackgroundImage = glyphArray(currentGlyph)
+                    encoded2.BackColor = Color.LightBlue
+                Case 2
+                    encoded3.BackgroundImage = glyphArray(currentGlyph)
+                    encoded3.BackColor = Color.LightBlue
+                Case 3
+                    encoded4.BackgroundImage = glyphArray(currentGlyph)
+                    encoded4.BackColor = Color.LightBlue
+                Case 4
+                    encoded5.BackgroundImage = glyphArray(currentGlyph)
+                    encoded5.BackColor = Color.LightBlue
+                Case 5
+                    encoded6.BackgroundImage = glyphArray(currentGlyph)
+                    encoded6.BackColor = Color.LightBlue
+                Case 6
+                    encoded7.BackgroundImage = glyphArray(currentGlyph)
+                    encoded7.BackColor = Color.LightBlue
+            End Select
+
+            If currentlyEncodingChevron = 6 Then
+                addressLocked()
+            Else
+                currentlyEncodingChevron = currentlyEncodingChevron + 1
+                rotatingToGlyph = dialGlyphs(currentlyEncodingChevron)
+                tmrDialClockwise.Enabled = True
+            End If
+        Else
+            If currentGlyph = 38 Then
+                currentGlyph = 0
+            Else
+                currentGlyph = currentGlyph + 1
+            End If
+
+            glyphContainer.BackgroundImage = glyphArray(currentGlyph)
+        End If
     End Sub
 
     Private Sub encoded1_Click(sender As Object, e As EventArgs) Handles encoded1.Click
@@ -110,14 +182,75 @@
     End Sub
 
     Private Sub cmdDial_Click(sender As Object, e As EventArgs) Handles cmdDial.Click
-        encoded1.BackgroundImage = Nothing
-        encoded2.BackgroundImage = Nothing
-        encoded3.BackgroundImage = Nothing
-        encoded4.BackgroundImage = Nothing
-        encoded5.BackgroundImage = Nothing
-        encoded6.BackgroundImage = Nothing
-        encoded7.BackgroundImage = Nothing
+        clearEncodedGlyphs()
+
+        encoded1.BackColor = Color.White
+        encoded2.BackColor = Color.White
+        encoded3.BackColor = Color.White
+        encoded4.BackColor = Color.White
+        encoded5.BackColor = Color.White
+        encoded6.BackColor = Color.White
+        encoded7.BackColor = Color.White
+
+        currentlyEncodingChevron = 0
+        rotatingToGlyph = dialGlyphs(0)
 
         tmrDialCounterclockwise.Enabled = True
+
+        cmdDial.Enabled = False
+        cmdAbort.Enabled = True
+    End Sub
+
+    Private Sub addressLocked()
+        encoded1.BackColor = Color.LightGreen
+        encoded2.BackColor = Color.LightGreen
+        encoded3.BackColor = Color.LightGreen
+        encoded4.BackColor = Color.LightGreen
+        encoded5.BackColor = Color.LightGreen
+        encoded6.BackColor = Color.LightGreen
+        encoded7.BackColor = Color.LightGreen
+        glyphContainer.BackgroundImage = Nothing
+        txtLocked.Visible = True
+    End Sub
+
+    Private Sub cmdAbort_Click(sender As Object, e As EventArgs) Handles cmdAbort.Click
+        tmrDialClockwise.Enabled = False
+        tmrDialCounterclockwise.Enabled = False
+        currentlyEncodingChevron = 0
+        dialGlyphs(0) = Nothing
+        dialGlyphs(1) = Nothing
+        dialGlyphs(2) = Nothing
+        dialGlyphs(3) = Nothing
+        dialGlyphs(4) = Nothing
+        dialGlyphs(5) = Nothing
+        dialGlyphs(6) = Nothing
+        clearEncodedGlyphs()
+
+        txtLocked.Visible = False
+        cmdAbort.Enabled = False
+        cmdDial.Enabled = True
+    End Sub
+
+    Private Sub clearEncodedGlyphs()
+        encoded1.BackgroundImage = Nothing
+        encoded1.BackColor = Color.LightGray
+
+        encoded2.BackgroundImage = Nothing
+        encoded2.BackColor = Color.LightGray
+
+        encoded3.BackgroundImage = Nothing
+        encoded3.BackColor = Color.LightGray
+
+        encoded4.BackgroundImage = Nothing
+        encoded4.BackColor = Color.LightGray
+
+        encoded5.BackgroundImage = Nothing
+        encoded5.BackColor = Color.LightGray
+
+        encoded6.BackgroundImage = Nothing
+        encoded6.BackColor = Color.LightGray
+
+        encoded7.BackgroundImage = Nothing
+        encoded7.BackColor = Color.LightGray
     End Sub
 End Class
