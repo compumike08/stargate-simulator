@@ -42,6 +42,10 @@
     }
 
     Dim currentGlyph As Integer = 0
+    Dim rotatingToGlyph As Integer = 0
+    Dim currentlyEncodingChevron As Integer = 0
+
+    Dim dialGlyphs(7) As Integer
 
     Private Sub tmrDialClockwise_Tick(sender As Object, e As EventArgs) Handles tmrDialClockwise.Tick
         If currentGlyph = 0 Then
@@ -63,7 +67,57 @@
         glyphContainer.BackgroundImage = glyphArray(currentGlyph)
     End Sub
 
-    Private Sub glyphContainer_Click(sender As Object, e As EventArgs) Handles glyphContainer.Click
+    Private Sub encoded1_Click(sender As Object, e As EventArgs) Handles encoded1.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 1")
+        dialGlyphs(0) = dial - 1
+        encoded1.BackgroundImage = glyphArray(dialGlyphs(0))
+    End Sub
+
+    Private Sub encoded2_Click(sender As Object, e As EventArgs) Handles encoded2.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 2")
+        dialGlyphs(1) = dial - 1
+        encoded2.BackgroundImage = glyphArray(dialGlyphs(1))
+    End Sub
+
+    Private Sub encoded3_Click(sender As Object, e As EventArgs) Handles encoded3.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 3")
+        dialGlyphs(2) = dial - 1
+        encoded3.BackgroundImage = glyphArray(dialGlyphs(2))
+    End Sub
+
+    Private Sub encoded4_Click(sender As Object, e As EventArgs) Handles encoded4.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 4")
+        dialGlyphs(3) = dial - 1
+        encoded4.BackgroundImage = glyphArray(dialGlyphs(3))
+    End Sub
+
+    Private Sub encoded5_Click(sender As Object, e As EventArgs) Handles encoded5.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 5")
+        dialGlyphs(4) = dial - 1
+        encoded5.BackgroundImage = glyphArray(dialGlyphs(4))
+    End Sub
+
+    Private Sub encoded6_Click(sender As Object, e As EventArgs) Handles encoded6.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 6")
+        dialGlyphs(5) = dial - 1
+        encoded6.BackgroundImage = glyphArray(dialGlyphs(5))
+    End Sub
+
+    Private Sub encoded7_Click(sender As Object, e As EventArgs) Handles encoded7.Click
+        Dim dial As Integer = InputBox("Enter glyph number", "GLYPH 7")
+        dialGlyphs(6) = dial - 1
+        encoded7.BackgroundImage = glyphArray(dialGlyphs(6))
+    End Sub
+
+    Private Sub cmdDial_Click(sender As Object, e As EventArgs) Handles cmdDial.Click
+        encoded1.BackgroundImage = Nothing
+        encoded2.BackgroundImage = Nothing
+        encoded3.BackgroundImage = Nothing
+        encoded4.BackgroundImage = Nothing
+        encoded5.BackgroundImage = Nothing
+        encoded6.BackgroundImage = Nothing
+        encoded7.BackgroundImage = Nothing
+
         tmrDialCounterclockwise.Enabled = True
     End Sub
 End Class

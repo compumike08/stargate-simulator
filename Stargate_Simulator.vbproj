@@ -162,8 +162,8 @@
     <None Include="images\glyphs\MilkyWayGlyph12.png" />
     <None Include="images\glyphs\MilkyWayGlyph11.png" />
     <None Include="images\glyphs\MilkyWayGlyph10.png" />
-    <None Include="images\glyphs\MilkyWayGlyph09.png" />
     <None Include="images\glyphs\MilkyWayGlyph08.png" />
+    <None Include="images\glyphs\MilkyWayGlyph09.png" />
     <None Include="images\glyphs\MilkyWayGlyph07.png" />
     <None Include="images\glyphs\MilkyWayGlyph06.png" />
     <None Include="images\glyphs\MilkyWayGlyph05.png" />

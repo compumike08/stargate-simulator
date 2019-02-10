@@ -27,6 +27,14 @@ Partial Class Main
         Me.glyphContainer = New System.Windows.Forms.Panel()
         Me.tmrDialClockwise = New System.Windows.Forms.Timer(Me.components)
         Me.tmrDialCounterclockwise = New System.Windows.Forms.Timer(Me.components)
+        Me.encoded1 = New System.Windows.Forms.Panel()
+        Me.encoded2 = New System.Windows.Forms.Panel()
+        Me.encoded3 = New System.Windows.Forms.Panel()
+        Me.encoded4 = New System.Windows.Forms.Panel()
+        Me.encoded5 = New System.Windows.Forms.Panel()
+        Me.encoded6 = New System.Windows.Forms.Panel()
+        Me.encoded7 = New System.Windows.Forms.Panel()
+        Me.cmdDial = New System.Windows.Forms.Button()
         Me.gateBackground.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +44,7 @@ Partial Class Main
         Me.gateBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.gateBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.gateBackground.Controls.Add(Me.glyphContainer)
-        Me.gateBackground.Location = New System.Drawing.Point(394, 72)
+        Me.gateBackground.Location = New System.Drawing.Point(394, 98)
         Me.gateBackground.Name = "gateBackground"
         Me.gateBackground.Size = New System.Drawing.Size(690, 690)
         Me.gateBackground.TabIndex = 0
@@ -58,11 +66,91 @@ Partial Class Main
         '
         Me.tmrDialCounterclockwise.Interval = 500
         '
+        'encoded1
+        '
+        Me.encoded1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded1.Location = New System.Drawing.Point(1332, 36)
+        Me.encoded1.Name = "encoded1"
+        Me.encoded1.Size = New System.Drawing.Size(115, 115)
+        Me.encoded1.TabIndex = 1
+        '
+        'encoded2
+        '
+        Me.encoded2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded2.Location = New System.Drawing.Point(1332, 157)
+        Me.encoded2.Name = "encoded2"
+        Me.encoded2.Size = New System.Drawing.Size(115, 115)
+        Me.encoded2.TabIndex = 2
+        '
+        'encoded3
+        '
+        Me.encoded3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded3.Location = New System.Drawing.Point(1332, 278)
+        Me.encoded3.Name = "encoded3"
+        Me.encoded3.Size = New System.Drawing.Size(115, 115)
+        Me.encoded3.TabIndex = 2
+        '
+        'encoded4
+        '
+        Me.encoded4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded4.Location = New System.Drawing.Point(1332, 399)
+        Me.encoded4.Name = "encoded4"
+        Me.encoded4.Size = New System.Drawing.Size(115, 115)
+        Me.encoded4.TabIndex = 2
+        '
+        'encoded5
+        '
+        Me.encoded5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded5.Location = New System.Drawing.Point(1332, 520)
+        Me.encoded5.Name = "encoded5"
+        Me.encoded5.Size = New System.Drawing.Size(115, 115)
+        Me.encoded5.TabIndex = 2
+        '
+        'encoded6
+        '
+        Me.encoded6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded6.Location = New System.Drawing.Point(1332, 641)
+        Me.encoded6.Name = "encoded6"
+        Me.encoded6.Size = New System.Drawing.Size(115, 115)
+        Me.encoded6.TabIndex = 2
+        '
+        'encoded7
+        '
+        Me.encoded7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.encoded7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.encoded7.Location = New System.Drawing.Point(1332, 762)
+        Me.encoded7.Name = "encoded7"
+        Me.encoded7.Size = New System.Drawing.Size(115, 115)
+        Me.encoded7.TabIndex = 3
+        '
+        'cmdDial
+        '
+        Me.cmdDial.Location = New System.Drawing.Point(1141, 789)
+        Me.cmdDial.Name = "cmdDial"
+        Me.cmdDial.Size = New System.Drawing.Size(165, 62)
+        Me.cmdDial.TabIndex = 4
+        Me.cmdDial.Text = "DIAL"
+        Me.cmdDial.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1479, 834)
+        Me.ClientSize = New System.Drawing.Size(1479, 887)
+        Me.Controls.Add(Me.cmdDial)
+        Me.Controls.Add(Me.encoded7)
+        Me.Controls.Add(Me.encoded6)
+        Me.Controls.Add(Me.encoded5)
+        Me.Controls.Add(Me.encoded4)
+        Me.Controls.Add(Me.encoded3)
+        Me.Controls.Add(Me.encoded2)
+        Me.Controls.Add(Me.encoded1)
         Me.Controls.Add(Me.gateBackground)
         Me.Name = "Main"
         Me.Text = "Main"
@@ -75,4 +163,12 @@ Partial Class Main
     Friend WithEvents glyphContainer As Panel
     Friend WithEvents tmrDialClockwise As Timer
     Friend WithEvents tmrDialCounterclockwise As Timer
+    Friend WithEvents encoded1 As Panel
+    Friend WithEvents encoded2 As Panel
+    Friend WithEvents encoded3 As Panel
+    Friend WithEvents encoded4 As Panel
+    Friend WithEvents encoded5 As Panel
+    Friend WithEvents encoded6 As Panel
+    Friend WithEvents encoded7 As Panel
+    Friend WithEvents cmdDial As Button
 End Class
