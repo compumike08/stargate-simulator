@@ -147,6 +147,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\glyphs\MilkyWayGlyph01.png" />
+    <Content Include="images\Milky_Way_stargate_1.png" />
+    <Content Include="images\Milky_Way_stargate_2.png" />
+    <Content Include="images\Milky_Way_stargate_3.png" />
+    <Content Include="images\Milky_Way_stargate_4.png" />
+    <Content Include="images\Milky_Way_stargate_5.png" />
+    <Content Include="images\Milky_Way_stargate_6.png" />
+    <Content Include="images\Milky_Way_stargate_7.png" />
+    <Content Include="images\Milky_Way_stargate_active.png" />
     <None Include="images\glyphs\MilkyWayGlyph39.png" />
     <None Include="images\glyphs\MilkyWayGlyph38.png" />
     <None Include="images\glyphs\MilkyWayGlyph37.png" />
