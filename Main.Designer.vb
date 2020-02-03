@@ -23,9 +23,6 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.gateBackground = New System.Windows.Forms.Panel()
-        Me.glyphContainer = New System.Windows.Forms.Panel()
-        Me.txtLocked = New System.Windows.Forms.TextBox()
         Me.tmrDialClockwise = New System.Windows.Forms.Timer(Me.components)
         Me.tmrDialCounterclockwise = New System.Windows.Forms.Timer(Me.components)
         Me.encoded1 = New System.Windows.Forms.Panel()
@@ -37,44 +34,12 @@ Partial Class Main
         Me.encoded7 = New System.Windows.Forms.Panel()
         Me.cmdDial = New System.Windows.Forms.Button()
         Me.cmdAbort = New System.Windows.Forms.Button()
+        Me.gateBackground = New System.Windows.Forms.Panel()
+        Me.glyphContainer = New System.Windows.Forms.Panel()
+        Me.txtLocked = New System.Windows.Forms.TextBox()
         Me.gateBackground.SuspendLayout()
         Me.glyphContainer.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'gateBackground
-        '
-        Me.gateBackground.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.Milky_Way_stargate
-        Me.gateBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.gateBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.gateBackground.Controls.Add(Me.glyphContainer)
-        Me.gateBackground.Location = New System.Drawing.Point(394, 98)
-        Me.gateBackground.Name = "gateBackground"
-        Me.gateBackground.Size = New System.Drawing.Size(690, 690)
-        Me.gateBackground.TabIndex = 0
-        '
-        'glyphContainer
-        '
-        Me.glyphContainer.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.MilkyWayGlyph01
-        Me.glyphContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.glyphContainer.Controls.Add(Me.txtLocked)
-        Me.glyphContainer.Location = New System.Drawing.Point(174, 174)
-        Me.glyphContainer.Name = "glyphContainer"
-        Me.glyphContainer.Size = New System.Drawing.Size(340, 340)
-        Me.glyphContainer.TabIndex = 0
-        '
-        'txtLocked
-        '
-        Me.txtLocked.BackColor = System.Drawing.Color.Black
-        Me.txtLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLocked.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLocked.ForeColor = System.Drawing.Color.Red
-        Me.txtLocked.Location = New System.Drawing.Point(79, 144)
-        Me.txtLocked.Name = "txtLocked"
-        Me.txtLocked.Size = New System.Drawing.Size(182, 53)
-        Me.txtLocked.TabIndex = 0
-        Me.txtLocked.Text = "LOCKED"
-        Me.txtLocked.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtLocked.Visible = False
         '
         'tmrDialClockwise
         '
@@ -173,6 +138,41 @@ Partial Class Main
         Me.cmdAbort.TabIndex = 5
         Me.cmdAbort.Text = "ABORT"
         Me.cmdAbort.UseVisualStyleBackColor = True
+        '
+        'gateBackground
+        '
+        Me.gateBackground.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.Milky_Way_stargate
+        Me.gateBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.gateBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.gateBackground.Controls.Add(Me.glyphContainer)
+        Me.gateBackground.Location = New System.Drawing.Point(394, 98)
+        Me.gateBackground.Name = "gateBackground"
+        Me.gateBackground.Size = New System.Drawing.Size(690, 690)
+        Me.gateBackground.TabIndex = 0
+        '
+        'glyphContainer
+        '
+        Me.glyphContainer.BackgroundImage = Global.Stargate_Simulator.My.Resources.Resources.MilkyWayGlyph01
+        Me.glyphContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.glyphContainer.Controls.Add(Me.txtLocked)
+        Me.glyphContainer.Location = New System.Drawing.Point(174, 174)
+        Me.glyphContainer.Name = "glyphContainer"
+        Me.glyphContainer.Size = New System.Drawing.Size(340, 340)
+        Me.glyphContainer.TabIndex = 0
+        '
+        'txtLocked
+        '
+        Me.txtLocked.BackColor = System.Drawing.Color.Black
+        Me.txtLocked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLocked.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLocked.ForeColor = System.Drawing.Color.Red
+        Me.txtLocked.Location = New System.Drawing.Point(79, 144)
+        Me.txtLocked.Name = "txtLocked"
+        Me.txtLocked.Size = New System.Drawing.Size(182, 53)
+        Me.txtLocked.TabIndex = 0
+        Me.txtLocked.Text = "LOCKED"
+        Me.txtLocked.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtLocked.Visible = False
         '
         'Main
         '

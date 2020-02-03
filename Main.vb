@@ -53,24 +53,31 @@
 
             Select Case currentlyEncodingChevron
                 Case 0
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_1
                     encoded1.BackgroundImage = glyphArray(currentGlyph)
                     encoded1.BackColor = Color.LightBlue
                 Case 1
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_2
                     encoded2.BackgroundImage = glyphArray(currentGlyph)
                     encoded2.BackColor = Color.LightBlue
                 Case 2
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_3
                     encoded3.BackgroundImage = glyphArray(currentGlyph)
                     encoded3.BackColor = Color.LightBlue
                 Case 3
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_4
                     encoded4.BackgroundImage = glyphArray(currentGlyph)
                     encoded4.BackColor = Color.LightBlue
                 Case 4
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_5
                     encoded5.BackgroundImage = glyphArray(currentGlyph)
                     encoded5.BackColor = Color.LightBlue
                 Case 5
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_6
                     encoded6.BackgroundImage = glyphArray(currentGlyph)
                     encoded6.BackColor = Color.LightBlue
                 Case 6
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_7
                     encoded7.BackgroundImage = glyphArray(currentGlyph)
                     encoded7.BackColor = Color.LightBlue
             End Select
@@ -99,24 +106,31 @@
 
             Select Case currentlyEncodingChevron
                 Case 0
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_1
                     encoded1.BackgroundImage = glyphArray(currentGlyph)
                     encoded1.BackColor = Color.LightBlue
                 Case 1
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_2
                     encoded2.BackgroundImage = glyphArray(currentGlyph)
                     encoded2.BackColor = Color.LightBlue
                 Case 2
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_3
                     encoded3.BackgroundImage = glyphArray(currentGlyph)
                     encoded3.BackColor = Color.LightBlue
                 Case 3
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_4
                     encoded4.BackgroundImage = glyphArray(currentGlyph)
                     encoded4.BackColor = Color.LightBlue
                 Case 4
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_5
                     encoded5.BackgroundImage = glyphArray(currentGlyph)
                     encoded5.BackColor = Color.LightBlue
                 Case 5
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_6
                     encoded6.BackgroundImage = glyphArray(currentGlyph)
                     encoded6.BackColor = Color.LightBlue
                 Case 6
+                    gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_7
                     encoded7.BackgroundImage = glyphArray(currentGlyph)
                     encoded7.BackColor = Color.LightBlue
             End Select
@@ -257,7 +271,9 @@
         encoded6.BackColor = Color.LightGreen
         encoded7.BackColor = Color.LightGreen
         glyphContainer.BackgroundImage = Nothing
+        glyphContainer.Visible = False
         txtLocked.Visible = True
+        gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate_active
     End Sub
 
     Private Sub cmdAbort_Click(sender As Object, e As EventArgs) Handles cmdAbort.Click
@@ -272,6 +288,9 @@
         dialGlyphs(5) = -1
         dialGlyphs(6) = -1
         clearEncodedGlyphs()
+
+        glyphContainer.Visible = True
+        gateBackground.BackgroundImage = My.Resources.Milky_Way_stargate
 
         txtLocked.Visible = False
         cmdAbort.Enabled = False
